@@ -1,0 +1,27 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awescnb/core.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/awescnb/core/issues"
+  },
+  "homepage": "https://github.com/awescnb/core#readme",
+  "dependencies": {
+    "vite": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.6"
+  }
+}
