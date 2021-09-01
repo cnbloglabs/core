@@ -1,15 +1,14 @@
-import { isFunction } from './utils/shared'
-import { __DEV__ } from './constants/env'
 import init from './init'
+import { __DEV__ } from './constants/env'
+import { isFunction } from './utils/shared'
+import { Theme, ThemeContext, Plugin, CreateThemeConfig } from './types/index'
 
-function createThemeContext() {
+function createThemeContext(): ThemeContext {
   return {
-    theme: null,
+    theme: null as any,
     config: {
       globalProperties: {},
     },
-    plugins: [],
-    modules: {},
   }
 }
 
@@ -18,7 +17,7 @@ function createThemeAPI() {
     const context = createThemeContext()
     const installedPlugins = new Set()
 
-    const theme = (context.theme = {
+    const theme: Theme = (context.theme = {
       _context: context,
       version: '3.0',
 
@@ -34,7 +33,7 @@ function createThemeAPI() {
         }
       },
 
-      use(plugin, ...options) {
+      use(plugin: Plugin, ...options: Array<any>) {
         if (installedPlugins.has(plugin)) {
           __DEV__ &&
             console.warn(`Plugin has already been applied to target theme.`)
@@ -52,21 +51,20 @@ function createThemeAPI() {
         }
         return theme
       },
-      module() {},
     })
 
     return theme
   }
 }
 
-function baseCreateAwescnb(options) {
+function baseCreateTheme(options) {
   init(options)
   return {
     createTheme: createThemeAPI(),
   }
 }
 
-export function createTheme(options) {
-  const theme = baseCreateAwescnb(options).createTheme()
+export function createTheme(options?: CreateThemeConfig) {
+  const theme = baseCreateTheme(options).createTheme()
   return theme
 }

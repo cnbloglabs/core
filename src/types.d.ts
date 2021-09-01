@@ -1,7 +1,6 @@
 export {}
-
 declare global {
   interface Window {
-    opts: {}
+    opts: object
   }
 }
