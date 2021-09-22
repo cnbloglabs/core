@@ -5,7 +5,8 @@ export default defineConfig({
     lib: {
       formats: ['es'],
       entry: './src/index.ts',
-      name: 'awescnb',
+      name: 'acnb',
+      fileName: 'acnb',
     },
   },
 })

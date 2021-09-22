@@ -1,8 +1,19 @@
 {
-  "name": "core",
-  "version": "1.0.0",
+  "name": "@acnb/core",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "dist/acnb.es.js",
+  "module": "dist/acnb.es.js",
+  "files": [
+    "src",
+    "dist/*.js",
+    "types/*.d.ts"
+  ],
+  "author": {
+    "name": "guangzan",
+    "url": "https://www.cnblogs.com/guangzan",
+    "email": "guangzan1999@outlook.com"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build"
@@ -11,14 +22,16 @@
     "type": "git",
     "url": "git+https://github.com/awescnb/core.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "博客园"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/awescnb/core/issues"
   },
   "homepage": "https://github.com/awescnb/core#readme",
   "dependencies": {
+    "@acnb/core": "^1.0.3",
     "vite": "^2.5.1"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 import { prettyLog } from './utils/helpers'
 import { __DEV__ } from './constants/env'
-import { getThemeOptions } from 'options/extra'
+// import { getThemeOptions } from 'options/extra'
 import { logs } from './constants/logs'
 
 function setDevOptions() {
@@ -16,17 +16,17 @@ function hideLoading() {
   }
 }
 
-function printInfo(themeOptions) {
-  const { log } = getThemeOptions(themeOptions)
-  if (!log) return
-  if (__DEV__) return
-  for (const { str, color } of logs) {
-    prettyLog(str, color)
-  }
-}
+// function printInfo(themeOptions) {
+//   // const { log } = getThemeOptions(themeOptions)
+//   // if (!log) return
+//   if (__DEV__) return
+//   for (const { str, color } of logs) {
+//     prettyLog(str, color)
+//   }
+// }
 
 export default options => {
   setDevOptions()
   hideLoading()
-  printInfo(options)
+  // printInfo(options)
 }

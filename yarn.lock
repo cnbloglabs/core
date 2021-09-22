@@ -2,6 +2,29 @@
 # yarn lockfile v1
 
 
+"@acnb/core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@acnb/core/-/core-1.0.1.tgz#7968c02ea852273440f9aeea270d3c42de171173"
+  integrity sha512-Swbw6txCOBBMBDSVHoWpk4zmF8+1Fel16BBfy10e37GnOXzJWKm2MCLaFlW4rXCoH5LJW2yAa95tFfk4XxQZaA==
+  dependencies:
+    vite "^2.5.1"
+
+"@acnb/core@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@acnb/core/-/core-1.0.2.tgz#bc0b5a82aa697153f1c6eadb169fb1181677032d"
+  integrity sha512-0qMXfYfaK6/6UdNioNNBBlljSwFtOkMJ3DGF47LTj1rbU41aMYcKIchYFT7LgAAQiCrC3/FFAqSJpYT2LeqnEQ==
+  dependencies:
+    "@acnb/core" "^1.0.1"
+    vite "^2.5.1"
+
+"@acnb/core@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@acnb/core/-/core-1.0.3.tgz#e0bf04ce4d1d3331fb4b496a3367b8ba445d242d"
+  integrity sha512-4THT7mbOb2ZJAnt56is9PKqSk9ho1Lx3FzqcFAIoKnHPKdswA/KmYH5awguXr9/UBiBcUCBCXY6mAVH5nbBygw==
+  dependencies:
+    "@acnb/core" "^1.0.2"
+    vite "^2.5.1"
+
 "@types/jquery@^3.5.6":
   version "3.5.6"
   resolved "https://registry.nlark.com/@types/jquery/download/@types/jquery-3.5.6.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fjquery%2Fdownload%2F%40types%2Fjquery-3.5.6.tgz#97ac8e36dccd8ad8ed3f3f3b48933614d9fd8cf0"
