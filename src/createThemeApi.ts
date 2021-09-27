@@ -18,7 +18,7 @@ export interface ThemeContext {
   config: ThemeConfig
 }
 
-type PluginInstallFunction = (theme: Theme, ...options: any[]) => any
+export type PluginInstallFunction = (theme: Theme, ...options: any[]) => any
 
 export type Plugin =
   | (PluginInstallFunction & { install?: PluginInstallFunction })

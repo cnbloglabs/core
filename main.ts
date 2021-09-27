@@ -9,8 +9,6 @@ const myPlugin = () => {
     enable: true,
   })
 
-  myPluginOption({ mountNode: '' })
-
   // console.log('plugin', enable)
 }
 
