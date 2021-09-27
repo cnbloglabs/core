@@ -21,13 +21,13 @@ export interface PluginObject<T> {
   [key: string]: any
 }
 
-export type defineOption<T> = (
-  userOptionName: string,
-  defaultOptions: object
-) => (devOptions?: object) => object
-
 export interface CreateThemeConfig {
   log: boolean
 }
 
-export type createTheme = (options?: CreateThemeConfig) => Theme
+export declare const createTheme: (options?: CreateThemeConfig) => Theme
+
+export declare const defineOption: <T>(
+  userOptionName: string,
+  defaultOptions: object
+) => (devOptions?: object) => object

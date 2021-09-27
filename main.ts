@@ -4,13 +4,14 @@ const theme = createTheme({
   log: true,
 })
 
-const myPluginOption = defineOption('myPlugin', {
-  enable: true,
-})
-
 const myPlugin = () => {
-  const { enable, mountNode } = myPluginOption({ mountNode: '' })
-  console.log('plugin', enable)
+  const myPluginOption = defineOption('myPlugin', {
+    enable: true,
+  })
+
+  myPluginOption({ mountNode: '' })
+
+  // console.log('plugin', enable)
 }
 
-theme.use(myPlugin)
+// theme.use(myPlugin)
