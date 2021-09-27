@@ -1,17 +1,11 @@
 import { createTheme, defineOptions } from '@acnb/core'
 
-const theme = createTheme({
-  log: true,
-})
+const theme = createTheme()
 
 const myPlugin = () => {
   const myPluginOption = defineOptions('myPlugin', {
     enable: true,
   })
-
-  myPluginOption().enable
-
-  // console.log('plugin', enable)
 }
 
-// theme.use(myPlugin)
+theme.use(myPlugin)

@@ -1,11 +1,11 @@
 {
   "name": "@acnb/core",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "",
   "license": "ISC",
   "main": "./dist/acnb.es.js",
   "module": "./dist/acnb.es.js",
-  "types": "./types/acnb.d.ts",
+  "types": "./dist/acnb.d.ts",
   "exports": {
     ".": {
       "import": "./dist/acnb.es.js"
@@ -13,8 +13,7 @@
   },
   "files": [
     "src",
-    "dist/*.js",
-    "types/*.d.ts"
+    "dist"
   ],
   "author": {
     "name": "guangzan",
@@ -37,7 +36,7 @@
   },
   "homepage": "https://github.com/awescnb/core#readme",
   "dependencies": {
-    "@acnb/core": "^1.0.2",
+    "@acnb/core": "^1.0.7",
     "vite": "^2.5.1"
   },
   "devDependencies": {

@@ -14,12 +14,13 @@ export interface ThemeContext {
   config: ThemeConfig
 }
 
-export type PluginFunction<T> = (Theme: Theme, options?: T) => void
+export type PluginInstallFunction = (theme: Theme, ...options: any[]) => any
 
-export interface PluginObject<T> {
-  install: PluginFunction<T>
-  [key: string]: any
-}
+export type Plugin =
+  | (PluginInstallFunction & { install?: PluginInstallFunction })
+  | {
+      install: PluginInstallFunction
+    }
 
 export interface CreateThemeConfig {
   log: boolean
