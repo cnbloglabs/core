@@ -9,7 +9,7 @@ type MergeOptionsFn = <A extends object, B extends object, C extends object>(
 type DefineOptionsFn = <F extends object, D extends object, U extends object>(
   userOptionName: string,
   defaultOptions: F
-) => (devOptions: D) => F & U & D
+) => (devOptions?: D) => F & U & D
 
 const userConfig = window.opts || {}
 

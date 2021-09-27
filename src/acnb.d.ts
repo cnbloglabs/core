@@ -34,4 +34,4 @@ export declare const defineOptions: <
 >(
   userOptionName: string,
   defaultOptions: F
-) => (devOptions: D) => F & U & D
+) => (devOptions?: D) => F & U & D
