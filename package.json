@@ -2,7 +2,7 @@
   "name": "@acnb/core",
   "version": "1.0.7",
   "description": "",
-  "license": "ISC",
+  "license": "MIT",
   "main": "./dist/acnb.es.js",
   "module": "./dist/acnb.es.js",
   "types": "./dist/acnb.d.ts",
