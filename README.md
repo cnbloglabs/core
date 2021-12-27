@@ -1,5 +1,100 @@
 # acnb-core
 
-- userOptions window 对象下的用户配置
-- devOptions 当前皮肤的默认配置
-- pluginOptions 插件配置，会覆盖插件默认配置
+API for creating cnblog theme.
+
+## Usage
+
+```shell
+npm i @acnb/core
+```
+
+## API
+
+### createTheme
+
+Returns a theme instance that provides a theme context.
+
+```js
+import { createTheme } from '@acnb/core'
+
+const theme = createTheme()
+```
+
+### defineOptions
+
+Returns a generic configuration object.
+
+```js
+const useBackgroundOptions = defineOptions('bodyBackground', {
+  enable: false,
+  value: '',
+  opacity: 0.85,
+  repeat: false,
+})
+```
+
+Cnblog theme users can add the following configuration:
+
+```js
+const opts = {
+  bodyBackground: {
+    enable: false,
+    value: '',
+    opacity: 0.85,
+    repeat: false,
+  },
+}
+```
+
+## Plugin System
+
+```js
+// plugin.js
+import { defineOptions } from '@acnb/core'
+
+export const backgroundPlugin = (theme, devOptions, pluginOptions) => {
+  const useBackgroundOptions = defineOptions('bodyBackground', {
+    enable: false,
+    value: '',
+    opacity: 0.85,
+    repeat: false,
+  })
+
+  const { enable, value, opacity, repeat } = useBackgroundOptions(devOptions)
+
+  if (!enable) return
+
+  const { opacitySelector } = Object.assign(
+    {},
+    {
+      opacitySelector: '#main,#navigator',
+    },
+    pluginOptions
+  )
+
+  setBackground(value, repeat)
+  setOpacity(opacity, opacitySelector)
+}
+```
+
+```js
+// theme/index.js
+import { createTheme } from '@acnb/core'
+import { backgroundPlugin } from './plugin'
+
+const theme = createTheme()
+
+theme.use(
+  backgroundPlugin,
+  {
+    // Set the default configuration of the theme
+    enable: true,
+    value: '#ffb3cc',
+    opacity: 0.85,
+  },
+  {
+    // Set the default configuration of the plugin
+    opacitySelector: '#main',
+  }
+)
+```

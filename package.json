@@ -6,6 +6,10 @@
   "main": "./dist/acnb.es.js",
   "module": "./dist/acnb.es.js",
   "types": "./dist/acnb.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build & cp ./src/acnb.d.ts dist/"
+  },
   "exports": {
     ".": {
       "import": "./dist/acnb.es.js"
@@ -19,10 +23,6 @@
     "name": "guangzan",
     "url": "https://www.cnblogs.com/guangzan",
     "email": "guangzan1999@outlook.com"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build & cp ./src/acnb.d.ts dist/"
   },
   "repository": {
     "type": "git",
