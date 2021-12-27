@@ -2,7 +2,7 @@
 
 API for creating cnblog theme.
 
-## Usage
+## Install
 
 ```shell
 npm i @acnb/core
