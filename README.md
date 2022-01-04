@@ -25,6 +25,8 @@ const theme = createTheme()
 Returns a generic configuration object.
 
 ```js
+import { defineOptions } from '@acnb/core'
+
 const useBackgroundOptions = defineOptions('bodyBackground', {
   enable: false,
   value: '',
