@@ -3,10 +3,10 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   build: {
     lib: {
-      formats: ['es'],
+      formats: ['es', 'cjs'],
       entry: './src/index.ts',
       name: 'acnb',
-      fileName: 'acnb',
+      fileName: 'index',
     },
   },
 })

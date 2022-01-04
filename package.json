@@ -2,44 +2,45 @@
   "name": "@acnb/core",
   "version": "1.0.7",
   "description": "",
-  "license": "MIT",
-  "main": "./dist/acnb.es.js",
-  "module": "./dist/acnb.es.js",
-  "types": "./dist/acnb.d.ts",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build & cp ./src/acnb.d.ts dist/"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/acnb.es.js"
-    }
-  },
-  "files": [
-    "src",
-    "dist"
+  "keywords": [
+    "博客园"
   ],
+  "homepage": "https://github.com/acnblogs/core#readme",
+  "bugs": {
+    "url": "https://github.com/acnblogs/core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acnblogs/core.git"
+  },
+  "license": "MIT",
   "author": {
     "name": "guangzan",
     "url": "https://www.cnblogs.com/guangzan",
     "email": "guangzan1999@outlook.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/awescnb/core.git"
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "keywords": [
-    "博客园"
+  "main": "./dist/index.es.js",
+  "module": "./dist/index.cjs.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
   ],
-  "bugs": {
-    "url": "https://github.com/awescnb/core/issues"
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build & cp ./src/index.d.ts dist/"
   },
-  "homepage": "https://github.com/awescnb/core#readme",
   "dependencies": {
-    "@acnb/core": "^1.0.7",
-    "vite": "^2.5.1"
+    "@acnb/core": "^1.0.7"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.6"
+    "@types/jquery": "^3.5.6",
+    "vite": "^2.7.7"
   }
 }
