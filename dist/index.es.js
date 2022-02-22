@@ -8,7 +8,10 @@ var init = (options) => {
   hideLoading();
 };
 const extend = Object.assign;
-const isFunction = (val) => typeof val === "function";
+const isArray = Array.isArray;
+function isFunction(x) {
+  return typeof x === "function";
+}
 function createThemeContext() {
   return {
     theme: null,
@@ -20,7 +23,7 @@ function createThemeContext() {
 function createThemeAPI() {
   return function createTheme2() {
     const context = createThemeContext();
-    const installedPlugins = new Set();
+    const installedPlugins = /* @__PURE__ */ new Set();
     const theme = context.theme = {
       _context: context,
       version: "3.0",
@@ -56,15 +59,27 @@ function createTheme(options) {
   const theme = baseCreateTheme().createTheme();
   return theme;
 }
-const userConfig = window.opts || {};
 const mergeOptions = (def, user, dev) => {
   const defaultOptions = extend({}, def, dev);
   const options = extend({}, defaultOptions, user);
   return options;
 };
+const getValue = (valueKeys = [], obj = {}) => {
+  const keys = Object.keys(obj);
+  const key = keys.find((key2) => valueKeys.includes(key2));
+  return key ? obj[key] : null;
+};
+const ensureUserOptions = (userOptionName) => {
+  const userConfig = window.opts || {};
+  if (typeof userOptionName === "string") {
+    return userConfig[userOptionName];
+  } else if (isArray(userOptionName)) {
+    return getValue(userOptionName, userConfig);
+  }
+};
 const defineOptions = (userOptionName, defaultOptions) => {
   return (devOptions) => {
-    return mergeOptions(defaultOptions, userConfig[userOptionName], devOptions);
+    return mergeOptions(defaultOptions, ensureUserOptions(userOptionName), devOptions);
   };
 };
 export { createTheme, defineOptions };
