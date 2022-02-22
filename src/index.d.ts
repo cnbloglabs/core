@@ -33,6 +33,6 @@ export declare const defineOptions: <
   D extends object,
   U extends object
 >(
-  userOptionName: string,
+  userOptionName: string | Array<string>,
   defaultOptions: F
 ) => (devOptions?: D) => F & U & D

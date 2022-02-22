@@ -48,6 +48,19 @@ const opts = {
 }
 ```
 
+Using configuration aliases:
+
+```javascript
+import { defineOptions } from '@acnb/core'
+
+const useBackgroundOptions = defineOptions(['bodyBackground', 'background'], {
+  enable: false,
+  value: '',
+  opacity: 0.85,
+  repeat: false,
+})
+```
+
 ## Plugin System
 
 ```js
