@@ -7,7 +7,7 @@ function setDevOptions() {
 }
 
 function hideLoading() {
-  const loading = $("#loading");
+  const loading = $("#loading,.loading");
   if (loading.length) {
     loading.fadeOut(300);
   }
